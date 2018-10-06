@@ -1,0 +1,28 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/swagger?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 1234
+    driverClassName: com.mysql.jdbc.Driver
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      filters: stat,wall,log4j
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.scnu.swaggerdemo.domain
+
+
+
+
